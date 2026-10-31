@@ -1,0 +1,10 @@
+# Build artifacts (kept for when source is published)
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Runtime / user data
+hotkey.txt
+*.log
