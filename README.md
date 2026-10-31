@@ -1,21 +1,21 @@
-# SbxSwitcher
+# Creative Sound Blaster Control Center — Headphone & Speaker Switcher
 
 **One-click (or one-hotkey) switching between Speakers and Headphones on Creative Sound Blaster sound cards.**
 
-Tired of opening the Creative app every time you plug or unplug a headset? SbxSwitcher sits in your system tray and flips your Sound Blaster's speaker configuration between **Speakers** and **Headphones** instantly — via a tray menu, a button, or a global hotkey from anywhere.
+Tired of opening the Creative app every time you plug or unplug a headset? This app sits in your system tray and flips your Sound Blaster's speaker configuration between **Speakers** and **Headphones** instantly — via a tray menu, a button, or a global hotkey from anywhere.
 
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Windows%20x86-blue" alt="Platform: Windows x86"/>
   <img src="https://img.shields.io/badge/runtime-.NET%20Framework%204.x-blueviolet" alt="Runtime: .NET Framework 4.x"/>
-  <img src="https://img.shields.io/github/v/release/symshah/SbxSwitcher" alt="Release"/>
-  <img src="https://img.shields.io/github/license/symshah/SbxSwitcher" alt="License"/>
+  <img src="https://img.shields.io/github/v/release/symshah/creative-sound-blaster-headphone-speaker-switcher" alt="Release"/>
+  <img src="https://img.shields.io/github/license/symshah/creative-sound-blaster-headphone-speaker-switcher" alt="License"/>
 </p>
 
 ---
 
 ## Why?
 
-Sound Blaster cards expose a **speaker configuration** (2.0 speakers vs. headphones) in the Creative audio console. Switching it manually for every headset swap is annoying. SbxSwitcher wraps the card's native **Sound Core (CtSndCr)** control API and does it for you in one click — no Creative software window needed.
+Sound Blaster cards expose a **speaker configuration** (2.0 speakers vs. headphones) in the Creative audio console. Switching it manually for every headset swap is annoying. The switcher wraps the card's native **Sound Core (CtSndCr)** control API and does it for you in one click — no Creative software window needed.
 
 ## Features
 
@@ -37,7 +37,7 @@ Sound Blaster cards expose a **speaker configuration** (2.0 speakers vs. headpho
 
 ## Installation
 
-1. Download the latest `SbxSwitcher.zip` from the [Releases](https://github.com/symshah/SbxSwitcher/releases) page.
+1. Download the latest `SbxSwitcher.zip` from the [Releases](https://github.com/symshah/creative-sound-blaster-headphone-speaker-switcher/releases) page.
 2. Extract both files (`SbxSwitcher.exe` + `Interop.CtSndCr.dll`) into a folder — they must stay together.
 3. Run `SbxSwitcher.exe`.
    - Windows SmartScreen may warn about an unsigned app — click **More info → Run anyway**.
@@ -54,18 +54,18 @@ Sound Blaster cards expose a **speaker configuration** (2.0 speakers vs. headpho
 
 ### Set a global hotkey
 
-1. Open the SbxSwitcher window.
+1. Open the switcher window.
 2. Click the **hotkey** button.
 3. Press the modifier(s) + key you want (e.g. `Ctrl + Alt + H`).
 4. Done — the combo works system-wide. It is stored in `hotkey.txt` in the app folder (portable across machines / reinstall).
 
 ### Auto-detect
 
-SbxSwitcher polls the card's headphone detection (`IsHeadphones`) so the status label always reflects what the card actually reports — plug in your headphones and watch it flip.
+The app polls the card's headphone detection (`IsHeadphones`) so the status label always reflects what the card actually reports — plug in your headphones and watch it flip.
 
 ## How it works
 
-SbxSwitcher is a thin WinForms wrapper over the **Creative Sound Core COM API** (`Interop.CtSndCr.dll` → `CTSoundCore` CLSID `{3C0E7BA7-F9C3-460F-BCBE-FC91A06EF3F3}`):
+The app is a thin WinForms wrapper over the **Creative Sound Core COM API** (`Interop.CtSndCr.dll` → `CTSoundCore` CLSID `{3C0E7BA7-F9C3-460F-BCBE-FC91A06EF3F3}`):
 
 - `ReadSpeakerConfig()` / `Write()` — set the card's speaker configuration to `SPEAKERS_CFG` or `HEADPHONES_CFG`
 - `IsHeadphones()` — query the current physical output state
@@ -88,7 +88,7 @@ This repository currently distributes the official **prebuilt binaries** (releas
 
 ## Disclaimer
 
-SbxSwitcher is an independent fan-made tool and is **not affiliated with, endorsed by, or connected to Creative Technology Ltd.** All product names and APIs belong to their respective owners. Use at your own risk — this tool writes parameters to your sound card's control interface.
+This is an independent fan-made tool and is **not affiliated with, endorsed by, or connected to Creative Technology Ltd.** All product names and APIs belong to their respective owners. Use at your own risk — this tool writes parameters to your sound card's control interface.
 
 ## License
 
